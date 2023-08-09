@@ -1,10 +1,13 @@
 @use "./components/mixins" as *;
 
-/********* THE FRANCE BLOCK **********/
+/********* THE FRANCE GALLERY BLOCK STYLES **********/
 .france {
-	max-width: 60%;
+	width: 60%;
 	margin: 0 auto;
 	padding: 1rem 0;
+	@include respond-to(medium) {
+		width: 100%;
+	}
 	.container {
 		width: 80%;
 		min-height: 400px;
@@ -13,7 +16,7 @@
 			.container__row--col-one {
 				text-align: center;
 				h2 {
-					font-size: clamp(1.25rem, 0.9583rem + 1.5556vw, 2.125rem);
+					font-size: clamp(1.5rem, 0.9583rem + 1.5556vw, 2.3rem);
 					font-weight: 600;
 				}
 			}
@@ -27,7 +30,7 @@
 				}
 				.single-item {
 					text-align: center;
-					max-width: 200px;
+					// max-width: 200px;
 					img {
 						width: 100%;
 						border-radius: 0.3rem;
@@ -40,6 +43,8 @@
 					}
 					p {
 						font-size: 0.8rem;
+						margin: 0;
+						padding: 0;
 					}
 					button {
 						display: inline-flex;
@@ -48,6 +53,7 @@
 						border: none;
 						border-radius: 0.5rem;
 						padding: 0.4rem 1rem;
+						margin: 0.5rem 0;
 						background-color: #000;
 						transition: all 0.5s;
 						a {

@@ -1,8 +1,13 @@
-/********* THE FRANCE BLOCK **********/
+/********* THE FRANCE GALLERY BLOCK STYLES **********/
 .france {
-  max-width: 60%;
+  width: 60%;
   margin: 0 auto;
   padding: 1rem 0;
+}
+@media (max-width: 992px) {
+  .france {
+    width: 100%;
+  }
 }
 .france .container {
   width: 80%;
@@ -13,7 +18,7 @@
   text-align: center;
 }
 .france .container__row .container__row--col-one h2 {
-  font-size: clamp(1.25rem, 0.9583rem + 1.5556vw, 2.125rem);
+  font-size: clamp(1.5rem, 0.9583rem + 1.5556vw, 2.3rem);
   font-weight: 600;
 }
 .france .container__row .container__row--col-two {
@@ -29,7 +34,6 @@
 }
 .france .container__row .container__row--col-two .single-item {
   text-align: center;
-  max-width: 200px;
 }
 .france .container__row .container__row--col-two .single-item img {
   width: 100%;
@@ -43,6 +47,8 @@
 }
 .france .container__row .container__row--col-two .single-item p {
   font-size: 0.8rem;
+  margin: 0;
+  padding: 0;
 }
 .france .container__row .container__row--col-two .single-item button {
   display: inline-flex;
@@ -51,6 +57,7 @@
   border: none;
   border-radius: 0.5rem;
   padding: 0.4rem 1rem;
+  margin: 0.5rem 0;
   background-color: #000;
   transition: all 0.5s;
 }
