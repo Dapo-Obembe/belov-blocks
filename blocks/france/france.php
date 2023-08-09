@@ -40,37 +40,35 @@ $all_items = get_field( 'france_items' );
 <section id="<?php echo esc_attr( $custom_id ); ?>" class="<?php echo esc_attr( $class_name ); ?>"  style="background-color: <?php the_field( 'background_color' ); ?>">  
 	<div class="container">
 		<div class="container__row">
-			<div class="container__row--col-one">
+			<div class="container__row--col-one col">
 					<?php if ( ! empty( $block_title ) ) { ?>
 							<h2><?php echo esc_attr( $block_title ); ?></h2>
 					<?php } ?>
 			</div>
-			<div class="container__row--col-two">
+			<div class="container__row--col-two col">
 					<?php if ( have_rows( 'france_items' ) ) : ?>
 						<?php
 						while ( have_rows( 'france_items' ) ) :
 							the_row();
 
 							// Variable to get the project image.
-							$image   = get_sub_field( 'image' );
-							$picture = $image['sizes']['medium']; // Fetch the image's large size.
-
+							$image            = get_sub_field( 'image' );
 							$button_link      = get_sub_field( 'item_link' );
 							$item_title       = get_sub_field( 'item_title' );
 							$item_description = get_sub_field( 'item_description' );
 
 							?>
 							<div class="single-item">
-								<img src="<?php echo esc_html( $picture ); ?>" alt="<?php echo esc_html( $image['alt'] ); ?>" />
-								<?php if ( ! empty( $item_title ) ) { ?>
-								<h3><?php echo esc_html( $item_title ); ?></h3>
-								<?php } ?>
-								<?php if ( ! empty( $item_description ) ) { ?>
-								<p><?php echo esc_html( $item_description ); ?></p>
-								<?php } ?>			
-								<?php if ( ! empty( $button_link ) ) { ?>
-								<button><a href="<?php echo esc_html( $button_link ); ?>">CTA BUTTON</a></button>
-								<?php } ?>
+								<?php echo wp_get_attachment_image( $image['id'] ); ?>
+								<?php if ( ! empty( $item_title ) ) : ?>
+									<h3><?php echo esc_html( $item_title ); ?></h3>
+								<?php endif; ?>
+								<?php if ( ! empty( $item_description ) ) : ?>
+									<p><?php echo esc_html( $item_description ); ?></p>
+								<?php endif; ?>			
+								<?php if ( ! empty( $button_link ) ) : ?>
+									<button><a href="<?php echo esc_html( $button_link ); ?>">CTA BUTTON</a></button>
+								<?php endif; ?>
 							</div>
 						<?php endwhile; ?>
 					<?php endif; ?>

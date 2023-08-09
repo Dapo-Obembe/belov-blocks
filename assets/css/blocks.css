@@ -37,6 +37,8 @@
 }
 .france .container__row .container__row--col-two .single-item img {
   width: 100%;
+  height: 150px;
+  object-fit: cover;
   border-radius: 0.3rem;
 }
 .france .container__row .container__row--col-two .single-item h3 {
