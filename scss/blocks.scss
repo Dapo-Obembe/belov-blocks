@@ -1,0 +1,71 @@
+@use "./components/mixins" as *;
+
+/********* THE FRANCE BLOCK **********/
+.france {
+	max-width: 60%;
+	margin: 0 auto;
+	padding: 1rem 0;
+	.container {
+		width: 80%;
+		min-height: 400px;
+		margin: 0 auto;
+		&__row {
+			.container__row--col-one {
+				text-align: center;
+				h2 {
+					font-size: clamp(1.25rem, 0.9583rem + 1.5556vw, 2.125rem);
+					font-weight: 600;
+				}
+			}
+			.container__row--col-two {
+				display: grid;
+				grid-template-columns: repeat(3, auto);
+				gap: 1rem;
+				@include respond-to(medium) {
+					grid-template-columns: auto;
+					justify-content: center;
+				}
+				.single-item {
+					text-align: center;
+					max-width: 200px;
+					img {
+						width: 100%;
+						border-radius: 0.3rem;
+					}
+					h3 {
+						/*****SECTION TITLE****/
+						font-size: clamp(1rem, 0.8333rem + 0.8889vw, 1.5rem);
+						margin: 0;
+						padding: 0;
+					}
+					p {
+						font-size: 0.8rem;
+					}
+					button {
+						display: inline-flex;
+						justify-content: center;
+						align-items: center;
+						border: none;
+						border-radius: 0.5rem;
+						padding: 0.4rem 1rem;
+						background-color: #000;
+						transition: all 0.5s;
+						a {
+							color: #fff;
+							font-size: 0.8rem;
+							text-transform: uppercase;
+							text-decoration: none;
+						}
+						&:hover {
+							background-color: #fff;
+							a {
+								color: #000;
+								font-weight: 600;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"name": "acf/france-block",
+	"title": "France Gallery Block",
+	"description": "A custom block to showcase features.",
+	"style": ["file:./assets/css/blocks.css"],
+	"category": "media",
+	"icon": "format-gallery",
+	"keywords": ["france", "travel"],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "france.php"
+	},
+	"align": "full"
+}
